@@ -18,8 +18,12 @@ import re
 
 app = FastAPI()
 
+@app.get("")
+def main():
+    return {"Die API läuft!"}
+
 @app.get("/getText/{promt}/{temperature}")
-def root(promt, temperature: float):
+def api(promt, temperature: float):
     transformer_config = TransformerConfig()
 
     tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
