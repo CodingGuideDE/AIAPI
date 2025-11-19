@@ -16,10 +16,12 @@ from torch.optim.lr_scheduler import LambdaLR
 import re
 
 
+print("Die API startet")
 app = FastAPI()
 
 @app.get("")
 def main():
+    print("Die API läuft")
     return {"Die API läuft!"}
 
 @app.get("/getText/{promt}/{temperature}")
